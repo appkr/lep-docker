@@ -133,6 +133,7 @@ RUN sed -i -e "s/;listen.mode = 0660/listen.mode = 0750/g" /etc/php/7.0/fpm/pool
 RUN find /etc/php/7.0/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 COPY config/fastcgi_params /etc/nginx/fastcgi_params
 RUN mkdir -p /run/php/ && chown -Rf $USERNAME:www-data /run/php
+VOLUME ["/var/log/php"]
 
 ##
 # Install Composer & PHPUnit
@@ -182,5 +183,5 @@ RUN rm -rf /usr/share/man/??_*
 ##
 
 EXPOSE 80 443
-ENTRYPOINT ["/bin/bash","-c"]
+#ENTRYPOINT ["/bin/bash","-c"]
 CMD ["/usr/bin/supervisord"]

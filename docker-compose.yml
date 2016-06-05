@@ -25,6 +25,7 @@ services:
         - cache
     volumes:
         - .:/var/www
+        - ./storage/logs:/var/log
     environment:
         - APP_ENV=local
         - DB_DATABASE=myapp

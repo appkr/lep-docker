@@ -1,5 +1,2 @@
-# Web Container for Laravel
-
-- Ubuntu 16.04
-- Nginx
-- PHP 7 & Tools
+Not use. Left here for my personal reference.
+There is no reason not to use https://github.com/LaraDock/laradock 
